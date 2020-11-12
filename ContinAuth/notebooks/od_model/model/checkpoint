@@ -1,0 +1,2 @@
+model_checkpoint_path: "vaegmm.ckpt"
+all_model_checkpoint_paths: "vaegmm.ckpt"
