@@ -2741,7 +2741,7 @@ from keras import activations
 
 param_dist = {
                 "l2_regularizer" :  np.linspace(1, 0,5) ,
-                "contamination" :   np.linspace(.5, 0,3) ,
+                "contamination" :   np.linspace(.5, 0,5) ,
                 "dropout_rate" :  [.25,0,.5] ,
                 "optimizer" : ['adam', 'sgd'], 
     
@@ -2769,11 +2769,24 @@ encoder_architectures = [
     [32,16,8,4,2],
     [32,16,8,4],
     [32,16,8,2],
-    #[32,16,2],
-    #[32,4],
-    #[32,2]
+    [32,16,8,1],
+    [32,16,2],
+    [32,16,1],
+    [32,4],
+    [32,2],
+    [32,1]
 ]
-all_df_reports=[] 
+#ll_df_reports=[] 
+
+
+def trans(y) : 
+    for i in range(len(y)): 
+        if y[i] == -1: 
+            y[i]=1
+        elif y[i] == 1:
+            y[i] = 0 
+    return y 
+
 for enc in encoder_architectures[::-1]: 
     df_results = None  # Will be filled with randomsearch scores
     for run in tqdm(range(1)):
@@ -2797,7 +2810,7 @@ for enc in encoder_architectures[::-1]:
 
             X = np.array(df_cv_scenarios["X"].values.tolist())
             y = df_cv_scenarios["label"].values
-
+            y= trans(y) 
             train_valid_cv = utils_create_cv_splits(df_cv_scenarios["mask"].values, SEED)
 
             dec=enc[::-1]
@@ -2826,8 +2839,8 @@ for enc in encoder_architectures[::-1]:
             df_report = utils_cv_report(random_search, owner, impostors)
             df_report["run"] = run
             df_results = pd.concat([df_results, df_report], sort=False)
-        all_df_reports.append([enc,df_results])
-        df_results.to_csv(OUTPUT_PATH / f"{P.name+str(enc)}__VAE__random_search_results_again.csv", index=False)
+#       all_df_reports.append([enc,df_results])
+        df_results.to_csv(OUTPUT_PATH / f"{P.name+str(enc)}__VAE_FIXED_EZ__random_search_results_again.csv", index=False)
 
 
 # ### 6.4 Inspect Search Results <a id='6.4'>&nbsp;</a> 
