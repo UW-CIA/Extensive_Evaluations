@@ -1,0 +1,4 @@
+backup_scratch_notebooks
+request_compute_node_for_24h
+tunnel +start_joop+ work
+git commit/push

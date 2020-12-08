@@ -1,0 +1,2 @@
+pkill screen 
+screen -S bkp_scrtchy_notebooks_INF_LOOP -d -m sh /home/u/uhengart/ezzeldi/bkp_loop

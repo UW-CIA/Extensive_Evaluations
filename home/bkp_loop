@@ -1,0 +1,1 @@
+while true; do yes | cp -rf /scratch/u/uhengart/ezzeldi/ContinAuth/notebooks /home/u/uhengart/ezzeldi/scratchy_bkp; sleep 20h; done
