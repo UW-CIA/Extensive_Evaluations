@@ -38,7 +38,7 @@ Interconnecting the following works:
 * Implicit Authentication 
 * Outlier Detection 
 
-## Description 
+## More 
 
 Many of the implementations are based on the work of the Buech in 2019. 
 
