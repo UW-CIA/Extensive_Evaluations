@@ -38,6 +38,28 @@ Interconnecting the following works:
 * Implicit Authentication 
 * Outlier Detection 
 
+### Abstract 
+Authenticating a user’s identity lies at the heart of securing any information system.
+A trade off exists currently between user experience and the level of security the system
+abides by. Using Continuous and Implicit Authentication a user’s identity can be verified
+without any active participation, hence increasing the level of security, given the continuous
+verification aspect, as well as the user experience, given its implicit nature.
+This thesis studies using mobile devices inertial sensors data to identify unique movements and patterns that identify the owner of the device at all times. We implement,
+and evaluate approaches proposed in related works as well as novel approaches based on a
+variety of machine learning models, specifically a new kind of Auto Encoder (AE) named
+Variational Auto Encoder (VAE), relating to the generative models family. We evaluate
+numerous machine learning models for the anomaly detection or outlier detection case of
+spotting a malicious user, or an unauthorised entity currently using the smartphone system. We evaluate the results under conditions similar to other works as well as under
+conditions typically observed in real-world applications. We find that the shallow VAE
+is the best performer semi-supervised anomaly detector in our evaluations and hence the
+most suitable for the design proposed.
+The thesis concludes with recommendations for the enhancement of the system and
+the research body dedicated to the domain of Continuous and Implicit Authentication for
+mobile security.
+Keywords: Machine Learning, Generative Models, Continuous Authentication, Implicit
+Authentication, Artificial Intelligence
+
+
 ## More 
 
 Continauth is based on the work of the Buech in 2019. REF: https://github.com/dynobo/ContinAuth
