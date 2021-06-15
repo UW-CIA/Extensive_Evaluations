@@ -40,6 +40,6 @@ Interconnecting the following works:
 
 ## Description 
 
-Two different implementations are successfully converted to tflite models that are easily ran at edge thanks to the tflite framework. 
+Many of the implementations are based on the work of the Buech in 2019. 
 
-REF: https://www.tensorflow.org/lite
+REF: https://github.com/dynobo/ContinAuth
