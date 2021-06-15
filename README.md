@@ -40,6 +40,11 @@ Interconnecting the following works:
 
 ## More 
 
-Many of the implementations are based on the work of the Buech in 2019. 
+Continauth is based on the work of the Buech in 2019. REF: https://github.com/dynobo/ContinAuth
+HMOG Dataset is public and can be downloaded from public sources. REF: http://www.cs.wm.edu/~qyang/hmog.html
+Home hosts files needed to run this project on Slurm managed resources like the super computers used in Compute Canada, and the Niagara super computer used by us in this work. 
+Continauth hosts src/data and src/utility which have scripts to download/generate data and helper code, respectively. 
+Continauth also hosts notebooks which have all the jupytner nootbooks that have the experiments. Some results that satisfy the size limitations imposed by github are also hosted under the output directory. 
+    │
 
-REF: https://github.com/dynobo/ContinAuth
+
