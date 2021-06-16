@@ -64,9 +64,20 @@ Authentication, Artificial Intelligence
 
 Continauth is based on the work of the Buech in 2019. REF: https://github.com/dynobo/ContinAuth
 HMOG Dataset is public and can be downloaded from public sources. REF: http://www.cs.wm.edu/~qyang/hmog.html
+
 Home hosts files needed to run this project on Slurm managed resources like the super computers used in Compute Canada, and the Niagara super computer used by us in this work. 
 Continauth hosts src/data and src/utility which have scripts to download/generate data and helper code, respectively. 
 Continauth also hosts notebooks which have all the jupytner nootbooks that have the experiments. Some results that satisfy the size limitations imposed by github are also hosted under the output directory. 
     │
 
-
+## Instructions 
+* Clone the repo 
+* If using a slurm environment run home/request_compute_node_for_24h to get a computing node. 
+* If using Ijupyter run home/start_joop to start the server 
+* If needed use an shh tunnel to forward the ports and use foxyproxy to allow your browser to utilize the SOCKS tunnel created 
+* Start the data processing functions for HMOG dataset by running ```bash python -m src.data.make_dataset```
+Thanks to dynobo's work the preprocessing is packaged nicely . But it can also run manually
+- `python -m src.data.unzip_hmog_dataset` - Unzip into '/data/external' and optionally remove zip file.
+- `python -m src.data.transform_to_hdf` - Reads CSVs, joins sensor data by time index and store it in HDF format in '/data/processed/' with table key `sensors_100hz`
+- `python -m src.data.resample_dataset` - Reads data from HDF, resamples it to 25Hz and stores it as separate table `sensors_25hz` in the same HDF.
+* The notebooks under notebooks ContinAuth/notebooks each try a different set of experiments, experiment settings are disclosed in the first section of each notebook, as well as each output result name, which can be found under notebooks/output/chapter-6-1-4-siamese-cnn 
